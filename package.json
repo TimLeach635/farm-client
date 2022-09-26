@@ -1,0 +1,26 @@
+{
+  "name": "farm-client",
+  "version": "0.0.1",
+  "description": "The frontend client for my little farm game",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "copyfiles -f src/index.html dist && node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimLeach635/farm-client.git"
+  },
+  "author": "Tim Leach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimLeach635/farm-client/issues"
+  },
+  "homepage": "https://github.com/TimLeach635/farm-client#readme",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "esbuild": "^0.15.9",
+    "socket.io-client": "^4.5.2",
+    "typescript": "^4.8.3"
+  }
+}

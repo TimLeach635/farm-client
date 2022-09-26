@@ -1,3 +1,5 @@
+import { io } from "socket.io-client";
+
 const socket = io("http://localhost:1995");
 
 const farmsDiv = document.getElementById("farms");
