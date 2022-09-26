@@ -1,4 +1,5 @@
 import { io } from "socket.io-client";
+import Phaser from "phaser";
 
 const socket = io("http://localhost:1995");
 
@@ -7,6 +8,30 @@ const crops = [];
 const farms = [];
 
 let hasStoredWorldState = false;
+
+function preload ()
+{
+  this.load.setBaseURL('http://labs.phaser.io');
+
+  this.load.image('sky', 'assets/skies/space3.png');
+}
+
+function create ()
+{
+  this.add.image(400, 300, 'sky');
+}
+
+const config = {
+  type: Phaser.AUTO,
+  width: 800,
+  height: 600,
+  scene: {
+    preload: preload,
+    create: create
+  }
+};
+
+const game = new Phaser.Game(config);
 
 socket.on("harvest", ({ farmId, cropId }) => {
   console.debug(`Harvesting farm ${farmId} containing crop ${cropId}`);
